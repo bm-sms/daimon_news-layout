@@ -1,0 +1,27 @@
+.promotions {
+  @include media($larger-tablet) {
+    @include span-columns(3);
+  }
+
+  @include media($smaller-tablet) {
+    @include span-columns(4);
+  }
+
+  @include media($smaller-mini-tablet) {
+    @include span-columns(12);
+  }
+
+  ul {
+    margin-bottom: 40px;
+  }
+
+  form[action='/search'] { // FIXME 検索フォームを移動したら削除してください。
+    margin-top: 20px;
+  }
+}
+
+.welcome {
+  .recent-posts {
+    display: none;
+  }
+}

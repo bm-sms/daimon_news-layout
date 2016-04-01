@@ -1,0 +1,68 @@
+.credits {
+  padding: 10px 0;
+  border-top: 1px dotted $base-color;
+  border-bottom: 1px dotted $base-color;
+  display: table;
+  width: 100%;
+
+  .credit {
+    display: table-row;
+  }
+
+  h2 {
+    font-size: $default-font-size - 2;
+    color: $base-color;
+    margin: 0;
+    padding: 0;
+
+    strong {
+      font-size: $default-font-size - 2;
+      padding: 2px 10px;
+      color: white;
+      background-color: $base-color;
+      border-radius: $input-border-radius;
+    }
+  }
+
+  p {
+    font-size: $default-font-size - 4;
+    margin: 0;
+    color: $main-color;
+  }
+
+  .participant__photo {
+    display: table-cell;
+    vertical-align: top;
+    width: 60px;
+    padding: 3px 0;
+    text-align: right;
+
+    img {
+      @include size(60px 60px);
+      border-radius: 30px;
+      border: 3px solid $light-border;
+    }
+  }
+
+  .content {
+    display: table-cell;
+    padding: 3px 20px 3px 0;
+    vertical-align: middle;
+  }
+
+  @include media($smaller-mini-tablet) {
+    h2 {
+      strong {
+        display: block;
+        color: $base-color;
+        background: none;
+        border: none;
+        padding: 0;
+
+        &:after {
+          content: "：";
+        }
+      }
+    }
+  }
+}

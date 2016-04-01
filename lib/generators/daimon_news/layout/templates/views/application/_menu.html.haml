@@ -1,0 +1,7 @@
+%li.menu__item.menu__item--home.menu__section
+  = link_to 'Home', '#', class: 'menu__label'
+%li.menu__item.menu__item--daimon.menu__section
+  = link_to 'Daimon', '#', class: 'menu__label'
+  %ul.menu__items
+    %li.menu__item.menu__item--work= link_to 'Work', '#', class: "menu__label"
+    %li.menu__item.menu__item--life{data: {menu_item_state: 'current'}}= link_to 'Life', '#', class: "menu__label"

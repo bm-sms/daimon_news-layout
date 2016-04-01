@@ -1,0 +1,12 @@
+.subheading {
+  display: block;
+  padding: 0;
+  line-height: 1.5;
+  color: $base-color;
+  border-bottom: 5px solid rgba($base-color, 0.3);
+  font-size: $default-font-size;
+}
+
+h2.subheading {
+  margin: 20px 0 0;
+}

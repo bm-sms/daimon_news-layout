@@ -1,0 +1,197 @@
+@import "article-summary-patch";
+
+.category {
+  background: rgba($base-color, 0.2);
+}
+
+.article-summary {
+  &__title {
+    @include line-clamp(1);
+    @include computed-height($default-font-size - 2, 1);
+    font-weight: normal;
+    margin-bottom: 10px;
+  }
+
+  &__content {
+    @include line-clamp(3);
+    @include computed-height($default-font-size - 4, 3);
+  }
+}
+
+.np-summary-with-small-thumbnail {
+  @include media($larger-tablet) {
+    .article-summary {
+      @include span-columns(9 of 9);
+      @include omega;
+
+      &__thumbnail {
+        @include span-columns(1 of 9);
+      }
+
+      &__body {
+        @include span-columns(8 of 9);
+      }
+    }
+  }
+
+  @include media($smaller-tablet) {
+    .article-summary {
+      @include span-columns(8 of 8);
+
+      &__thumbnail {
+        @include span-columns(1 of 8);
+      }
+
+      &__body {
+        @include span-columns(7 of 8);
+      }
+    }
+  }
+}
+
+.np-smaller-mini-tablet-column-setting {
+  @include media($smaller-mini-tablet) {
+    .article-summary {
+      @include span-columns(12);
+      @include omega;
+
+      &__thumbnail {
+        @include span-columns(2);
+      }
+
+      &__body {
+        @include span-columns(10);
+      }
+    }
+  }
+
+  @include media($mobile) {
+    .article-summary {
+      &__thumbnail {
+        @include span-columns(3);
+      }
+
+      &__body {
+        @include span-columns(9);
+      }
+    }
+  }
+}
+
+.welcome,
+.category-index {
+  .main-pane {
+    .article-summary {
+      @include omega;
+      padding: 10px;
+
+      &__thumbnail {
+        padding: 0;
+        height: auto;
+      }
+
+      &__data {
+        background: none;
+        text-align: right;
+        position: static;
+      }
+
+      &__data {
+        position: static;
+        padding-top: 0;
+        text-align: left;
+      }
+
+      &__body {
+        position: static;
+        padding: 0;
+        margin: 10px 0;
+      }
+
+      &__content {
+        @include line-clamp(3);
+        @include computed-height($default-font-size - 4, 3);
+      }
+
+      @include media($smaller-mini-tablet) {
+        padding: 10px;
+        margin-bottom: 0;
+        border-bottom: 1px solid rgba($main-color, 0.2);
+
+        &__url {
+          position: static;
+        }
+
+        &__thumbnail {
+          margin: 0;
+          padding-right: 10px;
+          img {
+            width: auto;
+          }
+        }
+
+        &__body {
+          font-size: $default-font-size - 2;
+          position: static;
+          padding: 0;
+          margin: 10px 0;
+        }
+
+        &__data {
+          position: static;
+          padding-top: 0;
+          text-align: left;
+        }
+      }
+    }
+
+    @extend .np-summary-with-small-thumbnail;
+    @extend .np-smaller-mini-tablet-column-setting;
+  }
+}
+
+.welcome,
+.category-index {
+  .main-pane {
+    .article-summary {
+
+      &__title {
+        @include computed-height($default-font-size, 1);
+      }
+
+    }
+  }
+}
+
+.promotions {
+  .article-summary {
+
+    &__title {
+      @include line-clamp(2);
+      @include computed-height($default-font-size - 3, 2);
+    }
+
+    @include media($smaller-mini-tablet){
+
+      &__title {
+        @include line-clamp(1);
+        @include computed-height($default-font-size - 3, 1);
+      }
+
+      &__thumbnail {
+        margin: 0;
+        padding: 10px;
+      }
+    }
+
+  }
+
+  @extend .np-smaller-mini-tablet-column-setting;
+}
+
+.main-pane {
+  .post {
+    @extend .np-smaller-mini-tablet-column-setting;
+    @extend .np-summary-with-small-thumbnail;
+  }
+}

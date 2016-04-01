@@ -1,0 +1,22 @@
+.button {
+  @include user-select(none);
+
+  @include appearance(none);
+
+  @include prepend-fa-icon-container($color: $default-icon-color);
+
+  display: inline-block;
+  border: 0;
+  padding: 0.5rem;
+  vertical-align: middle;
+  text-align: center;
+  background-color: $default-button-bg-color;
+  border-radius: $button-border-radius;
+  font-size: 0.9rem;
+
+  &--primary {
+    @include prepend-fa-icon-container($color: $primary-icon-color);
+
+    background-color: $primary-button-bg-color;
+  }
+}

@@ -1,0 +1,59 @@
+$mobile: new-breakpoint(max-width 480px 12);
+$smaller-mini-tablet: new-breakpoint(max-width 786px 12);
+$larger-mini-tablet: new-breakpoint(min-width 787px 12);
+$smaller-tablet: new-breakpoint(max-width 980px 12);
+$larger-tablet: new-breakpoint(min-width 981px 12);
+$smaller-desktop: new-breakpoint(max-width 1231px 12);
+$larger-desktop: new-breakpoint(min-width 1232px 12);
+
+$default-font-size: 16px;
+
+$base-hue: 220 !default; // FIXME この値を変更すると色相が変わります。
+$base-color: hsla($base-hue, 20%, 50%, 1) !default;
+$main-hue: 0 !default;
+$main-color: hsla($main-hue, 0%, 20%, 1) !default;
+$main-color: #666 !default;
+
+$header-height: rem(54);
+
+$default-icon-color: #CCC;
+
+$default-button-bg-color: #EEE;
+
+$primary-icon-color: $base-color;
+
+$primary-button-bg-color: #FFD6D6;
+
+$global-radius: 4px;
+$input-border-radius: $global-radius;
+$button-border-radius: $global-radius;
+$dialog-border-radius: $global-radius;
+
+$menu-border-color: rgba($main-color, 0.5);
+$menu-label-color: $main-color;
+$menu-font-size: $default-font-size - 2;
+
+$article-summary-border-color: white;
+
+$content-header-border-color: rgba($base-color, 0.5);
+
+$content-footer-bg-color: #EEE;
+$content-footer-link-color: #333;
+
+$backdrop-bg-color: #000;
+
+$sns-button-color: #FFF;
+
+$pagination-bg-color: $base-color;
+$pagination-link-color: #FFF;
+$pagination-icon-color: rgba(white, 0.5);
+$pagination-entries-color: #666;
+
+$sidebar-bg-color: #FFF;
+$light-border: #e6e6e6;
+
+$attention-red: #d64949;
+
+/*--- override ----------------------------------------------*/
+
+$max-width: 1232px;

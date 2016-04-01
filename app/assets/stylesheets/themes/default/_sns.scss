@@ -1,0 +1,45 @@
+.button {
+  &--facebook {
+    background: #40577f;
+  }
+
+  &--twitter {
+    background: #5ac8e2;
+  }
+
+  &--line {
+    background: #47b247;
+  }
+
+  &--hatebu {
+    background: #30a4bf;
+  }
+}
+
+.sns-share {
+  padding: 10px 0;
+  &__caption {
+    margin-bottom: 10px;
+    font-size: $default-font-size - 3;
+  }
+
+  &__buttons {
+    a[class^="button--"] {
+      @include size(50px 50px);
+      margin-right: 10px;
+      display: inline-block;
+      border: 3px solid $light-border;
+      border-radius: 25px;
+    }
+  }
+}
+
+.welcome {
+  .sns-share {
+    &__buttons {
+      a[class^="button--"] {
+        border: 3px solid white;
+      }
+    }
+  }
+}

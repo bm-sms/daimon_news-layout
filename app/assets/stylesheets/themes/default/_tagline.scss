@@ -1,0 +1,11 @@
+.welcome-content-wrapper {
+  padding: 20px 20px 0 20px;
+}
+
+.tagline-wrapper {
+  @include outer-container;
+  .tagline {
+    font-size: $default-font-size - 3;
+    color: $base-color;
+  }
+}

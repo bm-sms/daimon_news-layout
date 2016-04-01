@@ -1,0 +1,27 @@
+.main-pane {
+  @include span-columns(9);
+
+  @include media($smaller-tablet) {
+    @include span-columns(8);
+  }
+
+  @include media($smaller-mini-tablet) {
+    @include span-columns(12);
+  }
+
+  main {
+    padding-top: 20px;
+  }
+
+  aside {
+    padding: 0 20px;
+
+    h3 {
+      font-size: $default-font-size - 3;
+    }
+
+    @include media($smaller-tablet) {
+      padding: 0 20px 20px 20px;
+    }
+  }
+}

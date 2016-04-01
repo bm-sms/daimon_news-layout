@@ -1,0 +1,21 @@
+.category-list {
+  margin-top: 20px;
+
+  ul {
+    margin-top: 16px;
+  }
+
+  .category-list__item {
+    margin: 5px 3px;
+    display: inline-block;
+
+    a {
+      background: rgba($base-color, 0.2);
+      color: $base-color;
+      padding: 4px 10px;
+      font-size: $default-font-size - 2;
+      border-radius: $default-font-size / 2 + 4 + 3; // +3: for windows
+      white-space: nowrap;
+    }
+  }
+}

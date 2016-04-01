@@ -1,0 +1,13 @@
+%section.promotion.promotion--news
+  %h1.promotion__title.subheading--aside.promotion__title--news news site
+  %section
+    %h2.subheading.subheading--aside new arrivals
+    %ul
+      %li.article-summary.article-summary--with-thumbnail.article-summary--minor
+        = link_to '#', class: 'article-summary__url' do
+          %img.article-summary__thumbnail
+          .article-summary__body
+            %p.article-summary__title article title
+            %p.article-summary__data
+              %time.article-summary__data-item{datetime: Time.current.iso8601}
+                2000/01/01

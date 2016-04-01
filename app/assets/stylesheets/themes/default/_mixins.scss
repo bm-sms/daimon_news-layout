@@ -1,0 +1,146 @@
+@mixin visibility($visibility) {
+  @include prefixer(visibility, $visibility, webkit spec);
+}
+
+@mixin middle-screen {
+  @media screen and (min-width: 45rem) {
+    @content;
+  }
+}
+
+@mixin large-screen {
+  @media screen and (min-width: 64rem) {
+    @content;
+  }
+}
+
+@mixin flex-container($direction) {
+  @include display(flex);
+
+  @if index(vertical horizontal, $direction) == null {
+    @error "$direction must be horizontal or vertical: #{$direction}";
+  }
+
+  @if $direction == vertical {
+    @include flex-direction(column);
+  }
+  @else {
+    @include flex-direction(row);
+  }
+}
+
+@mixin fa-icon-fw {
+  @include fa-icon;
+
+  @extend .fa-fw;
+}
+
+@mixin prepend-fa-icon-container($color: $default-icon-color) {
+  &::before {
+    @include fa-icon-fw;
+
+    color: $color;
+    margin-right: 0.5em;
+  }
+}
+
+@mixin prepend-fa-icon-content($fa-var) {
+  &::before {
+    content: $fa-var;
+  }
+}
+
+@mixin prepend-fa-icon($fa-var, $color: $default-icon-color) {
+  @include prepend-fa-icon-container($color: $color);
+
+  @include prepend-fa-icon-content($fa-var);
+}
+
+@mixin append-fa-icon-container($color: $default-icon-color) {
+  &::after {
+    @include fa-icon-fw;
+
+    color: $color;
+    margin-left: 0.5em;
+  }
+}
+
+@mixin append-fa-icon-content($fa-var) {
+  &::after {
+    content: $fa-var;
+  }
+}
+
+@mixin append-fa-icon($fa-var, $color: $default-icon-color) {
+  @include append-fa-icon-container($color: $color);
+
+  @include append-fa-icon-content($fa-var);
+}
+
+@mixin modal($duration, $z-index) {
+  @include transition-duration($duration);
+
+  height: 100%;
+  z-index: $z-index;
+  overflow-y: hidden;
+
+  + .backdrop {
+    @include position(fixed, 0 0 0 0);
+
+    @include transition-property(opacity);
+
+    @include transition-duration($duration);
+
+    display: block;
+    z-index: 30;
+    visibility: hidden;
+    opacity: 0;
+    background-color: $backdrop-bg-color;
+    cursor: pointer;
+  }
+
+  &[data-modal-state='visible'] {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    @content;
+
+    + .backdrop {
+      visibility: visible;
+      opacity: 0.5;
+    }
+  }
+}
+
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+}
+
+@mixin computed-height($font-size: $default-font-size, $lines: 1, $line-height: 1.5) {
+  box-sizing: content-box;
+  font-size: $font-size;
+  line-height: $line-height;
+  height: $font-size * $line-height * $lines;
+  text-overflow: ellipsis;
+}
+
+@mixin header-icon($image-url, $size) {
+  &::before {
+    display: block;
+    @include size($size $size);
+    padding: 0;
+    content: "　";
+    font-size: $size;
+    cursor: pointer;
+    background: {
+      image:  image-url($image-url);
+      size: contain;
+      repeat: no-repeat;
+      position: center center;
+    }
+    vertical-align: middle;
+  }
+}

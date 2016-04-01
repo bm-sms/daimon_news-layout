@@ -1,0 +1,7 @@
+.wrappable {
+  @include outer-container;
+
+  @include media($smaller-desktop) {
+    margin: 0 20px;
+  }
+}

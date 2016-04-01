@@ -1,0 +1,315 @@
+.category {
+  background: lighten($base-color, 35%);
+  color: $base-color;
+  padding: 2px 3px;
+  border-radius: $global-radius;
+  font-size: $default-font-size - 4;
+  display: inline-block;
+  max-width: 67%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  &:not(:last-child) {
+    margin-right: 2px;
+  }
+}
+
+.summary-with-small-thumbnail {
+  @include media($larger-tablet) {
+    .article-summary {
+      @include span-columns(9 of 9);
+      @include omega;
+
+      &__thumbnail {
+        @include span-columns(1 of 9);
+      }
+
+      &__body {
+        @include span-columns(8 of 9);
+      }
+    }
+  }
+
+  @include media($smaller-tablet) {
+    .article-summary {
+      @include span-columns(8 of 8);
+
+      &__thumbnail {
+        @include span-columns(2 of 8);
+      }
+
+      &__body {
+        @include span-columns(6 of 8);
+      }
+    }
+  }
+}
+
+.smaller-mini-tablet-column-setting {
+  @include media($smaller-mini-tablet) {
+    .article-summary {
+      @include span-columns(12);
+      @include omega;
+
+      &__thumbnail {
+        @include span-columns(3);
+      }
+
+      &__body {
+        @include span-columns(9);
+      }
+    }
+  }
+}
+
+.article-summary {
+  &__title {
+    @include line-clamp(2);
+    @include computed-height($default-font-size - 2, 2);
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  &#{&}--minor &__title {
+    font-size: 0.8rem;
+  }
+
+  &__data {
+    line-height: 1;
+    display: block;
+    width: 100%;
+  }
+
+  &__data-item {
+    font-size: $default-font-size - 5; // 4 -> 5:for Oswald
+    font-family: 'Oswald', sans-serif;
+    color: rgba($main-color, 0.7);
+    display: inline-block;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+
+  &__content {
+    @include line-clamp(4);
+    @include computed-height($default-font-size - 4, 3);
+    color: rgba($main-color, 0.8);
+  }
+}
+
+_::-webkit-full-page-media, _:future, :root .article-summary__data-item { // for Safari 7.1+
+  height: auto;
+}
+
+.welcome,
+.category-index {
+  .main-pane {
+    ul {
+      @include outer-container;
+      padding: 0;
+    }
+
+    .article-summary {
+      @include media($larger-tablet) {
+        @include span-columns(3 of 9);
+        @include omega(3n);
+      }
+
+      @include media($smaller-tablet) {
+        @include span-columns(4 of 8);
+        @include omega(2n);
+      }
+
+      background: white;
+      border: 1px solid rgba($main-color, 0.2);
+      margin-bottom: 20px;
+      overflow-y: hidden;
+
+      &__thumbnail {
+        width: 100%;
+        height: 120px;
+        overflow-y: hidden;
+      }
+
+      &__data {
+        background: rgba(white, 0.6);
+        padding: 7px 5px;
+        position: relative;
+        top: -30px;
+      }
+
+      &__body {
+        background: white;
+        width: 100%;
+        font-size: $default-font-size - 2;
+        margin-top: -($default-font-size - 4 + 7px * 2);
+        z-index: 20;
+        padding: 10px;
+      }
+
+      &__title {
+        @include computed-height($default-font-size - 1, 2);
+        color: $base-color;
+      }
+
+      &__content {
+        @include computed-height($default-font-size - 3, 4);
+      }
+    }
+
+    @include media($smaller-mini-tablet) {
+      .article-summary {
+        @include span-columns(12);
+        @include omega;
+        padding: 10px;
+        margin-bottom: 0;
+        border-bottom: 1px solid rgba($main-color, 0.2);
+
+        .article-summary__url {
+          @include outer-container;
+          position: static;
+        }
+
+        .article-summary__thumbnail {
+          @include span-columns(2);
+        }
+
+        .article-summary__body {
+          @include span-columns(10);
+          font-size: $default-font-size - 2;
+          position: static;
+          padding: 0;
+          margin: 10px 0;
+        }
+
+        &__data {
+          position: static;
+          padding-top: 0;
+        }
+      }
+    }
+
+    @include media($mobile) {
+      .article-summary {
+        .article-summary__thumbnail {
+          @include span-columns(3);
+        }
+        .article-summary__body {
+          @include span-columns(9);
+        }
+      }
+    }
+  }
+}
+
+.search {
+  .main-pane {
+    .article-summary {
+      padding: 10px;
+      margin-bottom: 0;
+      border-bottom: 1px solid rgba($main-color, 0.2);
+
+      .article-summary__body {
+        font-size: $default-font-size - 2;
+        position: static;
+        padding: 0;
+      }
+
+      &__data {
+        position: static;
+        padding-top: 0;
+      }
+    }
+
+    @extend .summary-with-small-thumbnail;
+    @extend .smaller-mini-tablet-column-setting;
+  }
+}
+
+.promotions {
+  .article-summary {
+    border-bottom: 1px solid $article-summary-border-color;
+    @include outer-container;
+
+    &__thumbnail {
+      @include span-columns(1 of 3);
+      min-height: 100px;
+      padding: 10px 0 0 0;
+    }
+
+    &__data {
+      padding: 10px 0 0;
+    }
+
+    &__data-item {
+      display: inline-block;
+      margin-bottom: 4px;
+      display: block;
+      @include media($smaller-mini-tablet) {
+        display: inline-block;
+      }
+    }
+
+    &__body {
+      @include span-columns(2 of 3);
+      margin: 10px 0;
+    }
+
+    &__title {
+      margin-bottom: 5px;
+      font-size: $default-font-size - 3;
+      @include computed-height($default-font-size - 3, 2);
+    }
+    &__content {
+      padding-top: 5px;
+      border-top: 1px dotted rgba($main-color, 0.5);
+      @include computed-height($default-font-size - 4, 3);
+    }
+
+    .category {
+      background: rgba($base-color, 0.2);
+      max-width: 55%;
+    }
+  }
+
+  @extend .smaller-mini-tablet-column-setting;
+}
+
+.main-pane {
+  .post {
+    @include clearfix;
+    padding-bottom: 20px;
+
+    .related_articles {
+      border-top: 1px solid rgba($main-color, 0.2);
+    }
+
+
+    .article-summary {
+      border-width: 0 0 1px 0;
+      padding: 10px;
+      margin-bottom: 0;
+      border-bottom: 1px solid rgba($main-color, 0.2);
+
+      .article-summary__url {
+        position: static;
+      }
+
+      .article-summary__body {
+        font-size: $default-font-size - 2;
+        position: static;
+        padding: 0;
+        margin: 10px 0;
+      }
+
+      &__data {
+        position: static;
+        padding-top: 0;
+      }
+    }
+
+    @extend .summary-with-small-thumbnail;
+    @extend .smaller-mini-tablet-column-setting;
+  }
+}

@@ -1,0 +1,151 @@
+.menu {
+  @include outer-container;
+
+  * {
+    font-size: $menu-font-size; 
+  }
+
+  text-align: left;
+  display: block;
+
+  @include media($larger-tablet) {
+    .menu__item--home[data-menu-item-state='current'],
+    .menu__items--first li[data-menu-item-state='current'] {
+      border-top: 3px solid $base-color;
+    }
+  }
+
+  @include media($smaller-desktop) {
+    margin: 0 20px;
+  }
+
+  @include media($smaller-tablet) {
+    margin: 0;
+  }
+
+  &__section {
+    &:not(:first-child) {
+      margin-top: 0.6rem;
+      padding-top: 0.6rem;
+      border-top: 1px dotted $menu-border-color;
+    }
+  }
+
+  &__items {
+
+    @include media($larger-tablet) {
+      &--first,
+      &--second {
+        display: inline-block;
+      }
+
+      &--second {
+        li[data-menu-item-state='current'] {
+          background: rgba($base-color, 0.1);
+          border-radius: $global-radius;
+        }
+
+        border-top: 1px dotted rgba($main-color, 0.5);
+        display: none;
+        @include clearfix;
+        padding-top: 10px;
+
+        .menu__item {
+          width: 25%;
+          display: inline-block;
+          float: left;
+        }
+
+        .menu__label {
+          padding: 5px;
+        }
+      }
+    }
+  }
+
+  &__more {
+    background: rgba($base-color, 0.1);
+    border-radius: $global-radius;
+    padding: 5px 10px;
+    display: inline-block;
+
+    .arrow {
+      display: inline-block;
+      margin-left: 4px;
+    }
+
+    .down {
+      @include triangle($menu-font-size, rgba($main-color, 1), down);
+    }
+
+    .up {
+      @include triangle($menu-font-size, rgba($main-color, 1), up);
+    }
+
+    @include media($smaller-desktop) {
+      font-size: $default-font-size - 4;
+    }
+
+    @include media($smaller-tablet) {
+      display: none;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+
+    &--home {
+      background: {
+        image: image-url('home.svg');
+        size: $default-font-size $default-font-size;
+        position: 5px center;
+        repeat: no-repeat;
+      }
+
+      .menu__label {
+        padding-left: $default-font-size * 2;
+      }
+    }
+
+    @include media($smaller-tablet) {
+      display: block;
+
+      &--home {
+        margin-left: 0;
+      }
+
+      &[data-menu-item-state='current'] {
+        background-color: rgba($base-color, 0.15);
+      }
+    }
+  }
+
+  &__label {
+
+    display: block;
+
+    @include media($larger-desktop) {
+      padding: 12px;
+    }
+
+    @include media($smaller-desktop) {
+      padding: 12px 8px;
+      font-size: $default-font-size - 4;
+    }
+
+    @include media($smaller-tablet) {
+      border-bottom: 1px solid rgba($main-color, 0.5);
+    }
+  }
+
+  &__label,
+  &__more {
+    &:link, &:visited, &:active {
+      color: $menu-label-color;
+    }
+
+    &:hover {
+      color: rgba($menu-label-color, 0.8);
+    }
+  }
+}

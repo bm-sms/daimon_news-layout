@@ -1,0 +1,16 @@
+.error-message {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.link-from-error-page {
+  margin-bottom: 40px;
+
+  a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: $global-radius;
+    background-color: $base-color;
+    color: white;
+  }
+}

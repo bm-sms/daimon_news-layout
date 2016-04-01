@@ -1,0 +1,45 @@
+.main-pane {
+  .ad {
+    display: none !important;
+  }
+}
+
+.promotion .ad {
+  text-align: center;
+  @include media($smaller-tablet) {
+    img {
+      width: 100%;
+      max-width: 350px;
+    }
+  }
+}
+
+#mobile-ad-container {
+  display: none;
+
+  @include media($smaller-tablet) {
+    display: block;
+  }
+}
+
+#mobile-ad {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(black, 0.5);
+  text-align: center;
+  padding: 20px;
+
+  .promotion-tag > * {
+    margin: 0 auto;
+  }
+}
+
+#mobile-ad-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  @include size(20px 20px);
+}

@@ -1,0 +1,216 @@
+.content-header {
+  background: white;
+  z-index: 30;
+
+  @include media($smaller-tablet) {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &__main {
+    @include outer-container;
+    height: 80px;
+    top: 0;
+    padding: 20px 0;
+
+    @include media($smaller-tablet) {
+      & > * {
+        padding: 5px;
+      }
+      margin: 0 20px;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      height: 40px;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__button {
+    display: inline-block;
+
+    &#{&}--menu {
+      @include header-icon("menu.svg", 30px);
+    }
+  }
+
+  &__title {
+    @include span-columns(4);
+
+    height: 100%;
+
+    @include media($smaller-desktop) {
+      padding-left: 20px;
+    }
+
+    @include media($smaller-tablet) {
+      @include span-columns(6);
+      text-align: center;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    height: 100%;
+  }
+
+  &__logo-image {
+    height: 100%;
+  }
+
+  &__menu {
+    display: none;
+    @include media($smaller-tablet) {
+      @include span-columns(3);
+      display: inline-block;
+      img {
+        height: 30px;
+        width: auto;
+      }
+    }
+  }
+
+  &__search-and-log-in {
+    @include span-columns(8);
+    text-align: right;
+    height: 40px;
+
+    @include media($smaller-desktop) {
+      padding-right: 20px;
+    }
+
+    @include media($smaller-tablet) {
+      @include span-columns(3);
+      padding-right: 5px;
+      img {
+        height: 30px;
+        width: auto;
+      }
+    }
+  }
+
+  .search-form {
+    white-space: nowrap;
+    background: white;
+    width: auto;
+    display: inline-block;
+    z-index: 30;
+
+    input[type='search'] {
+      margin: 0;
+      padding: 4px 4px 4px 18px;
+      border-radius: 18px 0 0 18px;
+      float: left;
+      outline: none;
+    }
+
+    button[type='submit'] {
+      text-align: left;
+      margin: 0;
+      background: $base-color;
+      border: 1px solid $base-color;
+      border-radius: 0 18px 18px 0;
+      @include size(45px 35px);
+
+      img {
+        @include size(21px 21px);
+      }
+    }
+
+    @include media($smaller-tablet) {
+      padding: 20px 10%;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      width: 100%;
+      border-top: 1px solid $light-border;
+      border-bottom: 1px solid $light-border;
+      display: none;
+
+      input[type='search'] {
+        width: 100%;
+        margin-left: -35px;
+      }
+    }
+  }
+
+  button.search-form-icon {
+    padding-left: 10px;
+    @include header-icon("search-white.svg", 20px);
+  }
+
+  a.search-form-icon {
+    @include header-icon("search-colored.svg", 30px);
+    display: none;
+    @include media($smaller-tablet) {
+      display: inline-block;
+    }
+  }
+
+  .account {
+    display: inline-block;
+    margin: 7px 0 0 20px;
+    float: right;
+
+    .current-user-email {
+      float: left;
+      margin-right: 10px;
+      font-size: $default-font-size - 4;
+
+    }
+
+    @include media($smaller-tablet) {
+      margin: 0 0 0 10px;
+
+      .current-user-email {
+        display: none;
+      }
+    }
+  }
+
+  .content-header__button {
+    .image {
+      display: inline-block;
+      @include size(20px 20px);
+      float: left;
+      background: {
+        size: 20px 20px;
+        position: center center;
+        repeat: no-repeat;
+      }
+    }
+
+    .text {
+      margin-left: 10px;
+      display: inline-block;
+      height: 20px;
+      line-height: 20px;
+    }
+
+    &--signin {
+      .image {
+        background-image: image-url('sign-in.svg');
+      }
+    }
+
+    &--signout {
+      .image {
+        background-image: image-url('sign-out.svg');
+      }
+    }
+
+    @include media($smaller-tablet) {
+      .image {
+        background-size: 30px 30px;
+        @include size(30px 30px);
+      }
+
+      .text {
+        display: none;
+      }
+    }
+  }
+}

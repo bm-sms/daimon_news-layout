@@ -1,0 +1,23 @@
+.search {
+  .message {
+    margin: 20px 0;
+    em {
+      font-size: $default-font-size + 4;
+      font-weight: bold;
+    }
+  }
+}
+
+.search-result-list {
+  background: white;
+  @include clearfix;
+  margin-bottom: 20px;
+}
+
+.search-result {
+  &__keyword {
+    color: white;
+    background: rgba($base-color, 0.8);
+    padding: 1px;
+  }
+}

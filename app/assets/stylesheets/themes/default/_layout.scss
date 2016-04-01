@@ -1,0 +1,27 @@
+body {
+  background: $base-color;
+  font-size: $default-font-size;
+  color: $main-color;
+  @include media($smaller-tablet) {
+    padding-top: 40px;
+  }
+}
+
+.content-body {
+  background: rgba(white, 0.8);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  background: rgba(black, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 30;
+}
+
+.yyy {
+  display: none !important; //FIXME
+}
