@@ -30,6 +30,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'font-awesome-sass'
   spec.add_dependency 'normalize-scss'
   spec.add_dependency 'rack-cors'
+  spec.add_dependency 'neat'
 
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
