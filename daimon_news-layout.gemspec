@@ -6,8 +6,8 @@ require 'daimon_news/layout/version'
 Gem::Specification.new do |spec|
   spec.name          = "daimon_news-layout"
   spec.version       = DaimonNews::Layout::VERSION
-  spec.authors       = ["Fumiaki MATSUSHIMA"]
-  spec.email         = ["mtsmfm@gmail.com"]
+  spec.authors       = ["daimon developers"]
+  spec.email         = [""]
 
   spec.summary       = ''
   spec.description   = ''
