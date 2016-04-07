@@ -1,13 +1,13 @@
 {
   "name": "daimon_news-layout",
   "authors": [
-    "Fumiaki MATSUSHIMA <mtsmfm@gmail.com>"
+    "daimon developers"
   ],
   "description": "",
   "main": "",
   "moduleType": [],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/bm-sms/daimon_news-layout",
   "ignore": [
     "**/.*",
     "node_modules",
