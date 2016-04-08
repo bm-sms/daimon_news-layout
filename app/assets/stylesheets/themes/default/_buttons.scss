@@ -7,16 +7,21 @@
 
   display: inline-block;
   border: 0;
-  padding: 0.5rem;
+  padding: 10px 40px;
   vertical-align: middle;
   text-align: center;
   background-color: $default-button-bg-color;
   border-radius: $button-border-radius;
-  font-size: 0.9rem;
+  font-size: $default-font-size + 2;
 
   &--primary {
     @include prepend-fa-icon-container($color: $primary-icon-color);
 
-    background-color: $primary-button-bg-color;
+    background-color: $base-color;
+    color: white;
+
+    &:link, &:visited, &:hover, &:visited {
+      color: white;
+    }
   }
 }

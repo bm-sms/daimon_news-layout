@@ -35,4 +35,6 @@
 @import "tagline";
 @import "wrappable";
 
+// FIXME: patches をやめたい
+// https://github.com/bm-sms/daimon-news-multi-tenant/pull/423 相当の DOM になったら patches は消せる
 @import "patches/article-summary";

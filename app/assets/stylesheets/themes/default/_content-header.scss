@@ -66,6 +66,7 @@
     display: none;
     @include media($smaller-tablet) {
       @include span-columns(3);
+      cursor: pointer;
       display: inline-block;
       img {
         height: 30px;
