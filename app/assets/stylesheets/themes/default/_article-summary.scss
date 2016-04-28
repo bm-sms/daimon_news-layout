@@ -281,6 +281,15 @@ _::-webkit-full-page-media, _:future, :root .article-summary__data-item { // for
     }
   }
 
+  @include media($mobile) {
+    .article-summary {
+      .article-summary__title {
+        @include line-clamp(2);
+        @include computed-height($default-font-size - 2, 2);
+      }
+    }
+  }
+
   @extend .smaller-mini-tablet-column-setting;
 }
 
