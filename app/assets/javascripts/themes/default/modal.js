@@ -1,18 +1,20 @@
-jQuery(($) => {
-  let actions = {
-    show($this) {
+jQuery(function($) {
+  var actions = {
+    show: function($this) {
       if ($this.next('.backdrop').length == 0) {
-        let $backdrop = $('<a href="javascript:void(0);" class="backdrop"></a>');
+        var $backdrop = $('<a href="javascript:void(0);" class="backdrop"></a>');
 
         $this.after($backdrop);
-        $backdrop.on('click', () => actions.hide($this));
+        $backdrop.on('click', function() {
+          actions.hide($this);
+        });
       }
 
       $this.attr('data-modal-state', 'visible');
       $('.root-container').attr('data-layer', 'under-dialog');
     },
 
-    hide($this) {
+    hide: function($this) {
       $this.attr('data-modal-state', 'hidden');
       $('.root-container').attr('data-layer', 'top');
     }
