@@ -152,7 +152,6 @@
   .article-summary {
 
     &__title {
-      @include line-clamp(2);
       @include computed-height($default-font-size - 3, 2);
     }
 
