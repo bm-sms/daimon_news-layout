@@ -6,8 +6,6 @@
 
 .article-summary {
   &__title {
-    @include line-clamp(1);
-    @include computed-height($default-font-size - 2, 1);
     font-weight: normal;
     margin-bottom: 10px;
   }
@@ -172,12 +170,6 @@
     }
 
     @include media($smaller-mini-tablet){
-
-      &__title {
-        @include line-clamp(1);
-        @include computed-height($default-font-size - 3, 1);
-      }
-
       &__thumbnail {
         margin: 0;
         padding: 10px;
