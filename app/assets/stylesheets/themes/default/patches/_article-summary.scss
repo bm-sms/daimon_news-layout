@@ -148,19 +148,6 @@
   }
 }
 
-.welcome,
-.category-index {
-  .main-pane {
-    .article-summary {
-
-      &__title {
-        @include computed-height($default-font-size, 1);
-      }
-
-    }
-  }
-}
-
 .promotions {
   .article-summary {
 
