@@ -35,6 +35,7 @@
     &__description {
       @include span-columns(6 of 8);
       @include omega;
+      font-size: $default-font-size - 2;
     }
   }
 }
@@ -79,6 +80,12 @@
       margin: 0px;
       margin-top: 0.4em;
       padding: 0px;
+    }
+  }
+
+  @include media($smaller-tablet) {
+    li {
+      font-size: $default-font-size - 2;
     }
   }
 }
