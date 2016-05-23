@@ -25,3 +25,23 @@
     display: none;
   }
 }
+
+.to-serials {
+  a {
+    padding: 5px;
+    display: block;
+    width: 13em;
+    text-align: center;
+    color: $base-color;
+    border-radius: $button-border-radius;
+    margin: 20px auto 40px;
+
+    &:link, &:visited, &:active {
+      background: rgba($base-color, 0.2);
+    }
+
+    &:hover {
+      background: rgba($base-color, 0.1);
+    }
+  }
+}
