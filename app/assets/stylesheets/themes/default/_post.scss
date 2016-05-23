@@ -148,6 +148,41 @@
     font-size: $default-font-size - 2;
     color: rgba($main-color, 0.5);
   }
+
+  &__serial {
+    &--title {
+      font-size: $default-font-size - 2;
+      margin: 20px 0 0 0;
+
+      a:link, a:visited, a:active {
+        color: $base-color;
+      }
+
+      a:hover {
+        color: rgba($base-color, 0.8);
+      }
+    }
+
+    &--index {
+      a {
+        padding: 5px;
+        display: block;
+        width: 14em;
+        text-align: center;
+        color: white;
+        border-radius: $button-border-radius;
+
+        &:link, &:visited, &:active {
+          background: $base-color;
+        }
+
+        &:hover {
+          background: rgba($base-color, 0.9);
+        }
+        margin: 20px auto;
+      }
+    }
+  }
 }
 
 .fixed-page {
