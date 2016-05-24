@@ -6,6 +6,16 @@
 .serial-content {
   background: white;
   padding: 20px;
+
+  &__title {
+    color: $base-color;
+    font-size: $default-font-size;
+    margin: 0;
+  }
+
+  &__description {
+    margin: 1em 0 0 0;
+  }
 }
 
 @include media($larger-tablet) {
@@ -17,10 +27,20 @@
       @include span-columns(1 of 9);
     }
 
-    &__description {
+    &__title {
       @include span-columns(8 of 9);
       @include omega;
     }
+
+    &__description {
+      @include span-columns(9 of 9);
+      @include omega;
+    }
+  }
+
+  .serial-titles {
+    @include span-columns(9 of 9);
+    @include omega;
   }
 }
 
@@ -32,11 +52,22 @@
       @include span-columns(2 of 8);
     }
 
-    &__description {
+    &__title {
       @include span-columns(6 of 8);
       @include omega;
       font-size: $default-font-size - 2;
     }
+
+    &__description {
+      @include span-columns(8 of 8);
+      @include omega;
+      font-size: $default-font-size - 2;
+    }
+  }
+
+  .serial-titles {
+    @include span-columns(8 of 8);
+    @include omega;
   }
 }
 
@@ -49,17 +80,24 @@
       @include span-columns(3);
     }
 
-    &__description {
+    &__title {
       @include span-columns(9);
       @include omega;
     }
+
+    &__description {
+      @include span-columns(12);
+      @include omega;
+    }
+  }
+
+  .serial-titles {
+    @include span-columns(12);
+    @include omega;
   }
 }
 
 .serial-titles {
-  @include span-columns(12);
-  @include omega;
-
   border-top: 2px solid rgba($base-color, 0.2);
   margin-top: 20px;
   padding-top: 10px;
