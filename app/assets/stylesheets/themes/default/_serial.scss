@@ -77,11 +77,11 @@
     @include omega;
 
     &__thumbnail {
-      @include span-columns(3);
+      @include span-columns(2);
     }
 
     &__title {
-      @include span-columns(9);
+      @include span-columns(10);
       @include omega;
     }
 
@@ -94,6 +94,19 @@
   .serial-titles {
     @include span-columns(12);
     @include omega;
+  }
+}
+
+@include media($mobile) {
+  .serial-content {
+    &__thumbnail {
+      @include span-columns(3);
+    }
+
+    &__title {
+      @include span-columns(9);
+      @include omega;
+    }
   }
 }
 
