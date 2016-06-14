@@ -6,6 +6,7 @@
 
 .promotion .ad {
   text-align: center;
+  margin-top: 20px;
   @include media($smaller-tablet) {
     img {
       width: 100%;
