@@ -4,13 +4,11 @@
   }
 }
 
-.promotion .ad {
-  text-align: center;
-  margin-top: 20px;
-  @include media($smaller-tablet) {
-    img {
-      width: 100%;
-      max-width: 350px;
+.promotion {
+  &--ad {
+    margin-top: 20px;
+    & > * {
+      margin: 0 auto;
     }
   }
 }
