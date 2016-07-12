@@ -1,4 +1,6 @@
 .pagination {
+  $item-padding: 7px 12px;
+
   margin-top: 1.5rem;
   text-align: center;
 
@@ -14,15 +16,22 @@
 
   &__item {
     display: inline-block;
-    margin: 0 rem(5);
+    margin: 0 rem(2);
+    font-size: $default-font-size - 2;
+
+    &--current {
+      background-color: rgba($pagination-link-color, 1);
+      color: $pagination-bg-color;
+      padding: $item-padding;
+      border-radius: $global-radius;
+    }
   }
 
   &__link {
     display: inline-block;
-    padding: 10px 20px;
+    padding: $item-padding;
     border-radius: $global-radius;
     background-color: $pagination-bg-color;
-    font-size: $default-font-size - 2;
 
     &#{&}--first {
       @include prepend-fa-icon($fa-var-angle-double-left, $color: $pagination-icon-color);
