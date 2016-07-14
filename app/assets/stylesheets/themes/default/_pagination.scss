@@ -1,5 +1,6 @@
 .pagination {
   $item-padding: 7px 12px;
+  $small-item-padding: 5px 10px;
 
   margin-top: 1.5rem;
   text-align: center;
@@ -16,8 +17,11 @@
 
   &__item {
     display: inline-block;
-    margin: 0 rem(2);
     font-size: $default-font-size - 2;
+
+    @include middle-screen {
+      margin: 0 rem(2);
+    }
 
     &--current {
       background-color: rgba($pagination-link-color, 1);
@@ -29,9 +33,13 @@
 
   &__link {
     display: inline-block;
-    padding: $item-padding;
+    padding: $small-item-padding;
     border-radius: $global-radius;
     background-color: $pagination-bg-color;
+
+    @include middle-screen {
+      padding: $item-padding;
+    }
 
     &#{&}--first {
       @include prepend-fa-icon($fa-var-angle-double-left, $color: $pagination-icon-color);
@@ -48,6 +56,16 @@
     &#{&}--last {
       @include append-fa-icon($fa-var-angle-double-right, $color: $pagination-icon-color);
     }
+
+    &#{&}--prev, &#{&}--next {
+      display: none;
+    }
+
+    @include large-screen {
+      &#{&}--prev, &#{&}--next {
+        display: inline-block;
+      }
+    }
   }
   a:link, a:visited, a:active {
     color: rgba($pagination-link-color, 1);
@@ -55,5 +73,13 @@
   a:hover {
     color: rgba($pagination-link-color, 1);
     background-color: rgba($pagination-bg-color, 0.8);
+  }
+
+  &__text {
+    display: none;
+
+    @include middle-screen {
+      display: inline-block;
+    }
   }
 }
