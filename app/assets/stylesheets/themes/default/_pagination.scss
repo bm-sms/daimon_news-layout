@@ -26,8 +26,12 @@
     &--current {
       background-color: rgba($pagination-link-color, 1);
       color: $pagination-bg-color;
-      padding: $item-padding;
+      padding: $small-item-padding;
       border-radius: $global-radius;
+
+      @include middle-screen {
+        padding: $item-padding;
+      }
     }
   }
 
@@ -57,6 +61,16 @@
       @include append-fa-icon($fa-var-angle-double-right, $color: $pagination-icon-color);
     }
 
+    &#{&}--first, &#{&}--last {
+      padding: 5px 3px;
+    }
+
+    @include middle-screen {
+      &#{&}--first, &#{&}--prev, &#{&}--next, &#{&}--last {
+        padding: $item-padding;
+      }
+    }
+
     &#{&}--prev, &#{&}--next {
       display: none;
     }
@@ -79,6 +93,14 @@
     display: none;
 
     @include middle-screen {
+      display: inline-block;
+    }
+  }
+
+  .gap {
+    display: none;
+
+    @include small-screen {
       display: inline-block;
     }
   }

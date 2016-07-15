@@ -2,6 +2,12 @@
   @include prefixer(visibility, $visibility, webkit spec);
 }
 
+@mixin small-screen {
+  @media screen and (min-width: 22rem) {
+    @content;
+  }
+}
+
 @mixin middle-screen {
   @media screen and (min-width: 45rem) {
     @content;
