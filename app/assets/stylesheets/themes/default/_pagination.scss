@@ -19,30 +19,30 @@
     display: inline-block;
     font-size: $default-font-size - 2;
 
-    @include middle-screen {
-      margin: 0 rem(2);
+    @include media($mobile) {
+      margin: 0;
     }
 
     &--current {
       background-color: rgba($pagination-link-color, 1);
       color: $pagination-bg-color;
-      padding: $small-item-padding;
+      padding: $item-padding;
       border-radius: $global-radius;
 
-      @include middle-screen {
-        padding: $item-padding;
+      @include media($mobile) {
+        padding: $small-item-padding;
       }
     }
   }
 
   &__link {
     display: inline-block;
-    padding: $small-item-padding;
+    padding: $item-padding;
     border-radius: $global-radius;
     background-color: $pagination-bg-color;
 
-    @include middle-screen {
-      padding: $item-padding;
+    @include media($mobile) {
+      padding: $small-item-padding;
     }
 
     &#{&}--first {
@@ -62,22 +62,25 @@
     }
 
     &#{&}--first, &#{&}--last {
-      padding: 5px 3px;
+      padding: $item-padding;
     }
 
-    @include middle-screen {
+    @include media($mobile) {
       &#{&}--first, &#{&}--prev, &#{&}--next, &#{&}--last {
-        padding: $item-padding;
+        padding: 5px 3px;
       }
     }
 
-    &#{&}--prev, &#{&}--next {
-      display: none;
-    }
-
-    @include large-screen {
+    @include media($smaller-tablet) {
       &#{&}--prev, &#{&}--next {
-        display: inline-block;
+        display: none;
+      }
+
+      &#{&}--first {
+        margin-right: -7px;
+      }
+      &#{&}--last {
+        margin-left: -7px;
       }
     }
   }
@@ -90,18 +93,10 @@
   }
 
   &__text {
-    display: none;
+    display: inline-block;
 
-    @include middle-screen {
-      display: inline-block;
-    }
-  }
-
-  .gap {
-    display: none;
-
-    @include small-screen {
-      display: inline-block;
+    @include media($mobile) {
+      display: none;
     }
   }
 }
