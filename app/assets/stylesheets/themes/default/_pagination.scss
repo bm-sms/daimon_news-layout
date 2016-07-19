@@ -1,4 +1,7 @@
 .pagination {
+  $item-padding: 7px 12px;
+  $small-item-padding: 5px 10px;
+
   margin-top: 1.5rem;
   text-align: center;
 
@@ -14,15 +17,33 @@
 
   &__item {
     display: inline-block;
-    margin: 0 rem(5);
+    font-size: $default-font-size - 2;
+
+    @include media($mobile) {
+      margin: 0;
+    }
+
+    &--current {
+      background-color: rgba($pagination-link-color, 1);
+      color: $pagination-bg-color;
+      padding: $item-padding;
+      border-radius: $global-radius;
+
+      @include media($mobile) {
+        padding: $small-item-padding;
+      }
+    }
   }
 
   &__link {
     display: inline-block;
-    padding: 10px 20px;
+    padding: $item-padding;
     border-radius: $global-radius;
     background-color: $pagination-bg-color;
-    font-size: $default-font-size - 2;
+
+    @include media($mobile) {
+      padding: $small-item-padding;
+    }
 
     &#{&}--first {
       @include prepend-fa-icon($fa-var-angle-double-left, $color: $pagination-icon-color);
@@ -39,6 +60,29 @@
     &#{&}--last {
       @include append-fa-icon($fa-var-angle-double-right, $color: $pagination-icon-color);
     }
+
+    &#{&}--first, &#{&}--last {
+      padding: $item-padding;
+    }
+
+    @include media($mobile) {
+      &#{&}--first, &#{&}--prev, &#{&}--next, &#{&}--last {
+        padding: 5px 3px;
+      }
+    }
+
+    @include media($smaller-tablet) {
+      &#{&}--prev, &#{&}--next {
+        display: none;
+      }
+
+      &#{&}--first {
+        margin-right: -7px;
+      }
+      &#{&}--last {
+        margin-left: -7px;
+      }
+    }
   }
   a:link, a:visited, a:active {
     color: rgba($pagination-link-color, 1);
@@ -46,5 +90,13 @@
   a:hover {
     color: rgba($pagination-link-color, 1);
     background-color: rgba($pagination-bg-color, 0.8);
+  }
+
+  &__text {
+    display: inline-block;
+
+    @include media($mobile) {
+      display: none;
+    }
   }
 }

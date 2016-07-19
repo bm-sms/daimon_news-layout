@@ -2,18 +2,6 @@
   @include prefixer(visibility, $visibility, webkit spec);
 }
 
-@mixin middle-screen {
-  @media screen and (min-width: 45rem) {
-    @content;
-  }
-}
-
-@mixin large-screen {
-  @media screen and (min-width: 64rem) {
-    @content;
-  }
-}
-
 @mixin flex-container($direction) {
   @include display(flex);
 
