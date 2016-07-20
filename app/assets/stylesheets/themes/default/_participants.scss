@@ -1,0 +1,10 @@
+.participants-header {
+  @extend .subheading;
+  margin: 0 0 20px;
+}
+
+.participants-list {
+  background: white;
+  @include clearfix;
+  margin-bottom: 20px;
+}

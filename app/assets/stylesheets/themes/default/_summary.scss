@@ -24,7 +24,8 @@
 .summary-with-small-thumbnail {
   @include media($larger-tablet) {
     .serial-summary,
-    .article-summary {
+    .article-summary,
+    .participant-summary {
       @include span-columns(9 of 9);
       @include omega;
 
@@ -40,7 +41,8 @@
 
   @include media($smaller-tablet) {
     .serial-summary,
-    .article-summary {
+    .article-summary,
+    .participant-summary {
       @include span-columns(8 of 8);
 
       &__thumbnail {
@@ -57,7 +59,8 @@
 .smaller-mini-tablet-column-setting {
   @include media($smaller-mini-tablet) {
     .serial-summary,
-    .article-summary {
+    .article-summary,
+    .participant-summary {
       @include span-columns(12);
       @include omega;
 
@@ -73,7 +76,8 @@
 }
 
 .serial-summary,
-.article-summary {
+.article-summary,
+.participant-summary {
   &__title {
     @include line-clamp(2);
     @include computed-height($default-font-size - 2, 2);
@@ -214,16 +218,19 @@ _::-webkit-full-page-media, _:future, :root .article-summary__data-item { // for
 }
 
 .serials,
+.participants,
 .search {
   .main-pane {
     .serial-summary,
-    .article-summary {
+    .article-summary,
+    .participant-summary {
       padding: 10px;
       margin-bottom: 0;
       border-bottom: 1px solid rgba($main-color, 0.2);
 
       .serial-summary__body,
-      .article-summary__body {
+      .article-summary__body,
+      .participant-summary__body {
         font-size: $default-font-size - 2;
         position: static;
         padding: 0;

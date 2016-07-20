@@ -1,0 +1,138 @@
+.participant-content {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+
+  &__title {
+    color: $base-color;
+    font-size: $default-font-size;
+    margin: 0;
+  }
+
+  &__description {
+    margin: 1em 0 0 0;
+  }
+}
+
+.participant-titles {
+  border-top: 2px solid rgba($base-color, 0.2);
+  margin-top: 20px;
+  padding-top: 10px;
+  position: relative;
+
+  li {
+    margin-bottom: 10px;
+    margin-left: 1.5em;
+
+    &:before {
+      content: ' ';
+      border: transparent solid 0.3em;
+      border-left-color: $base-color;
+      position: absolute;
+      height: 0;
+      width: 0;
+      left: 0.5em;
+      margin: 0px;
+      margin-top: 0.4em;
+      padding: 0px;
+    }
+  }
+
+  @include media($smaller-tablet) {
+    li {
+      font-size: $default-font-size - 2;
+    }
+  }
+}
+
+@include media($larger-tablet) {
+  .participant-content {
+    @include span-columns(9 of 9);
+    @include omega;
+
+    &__photo {
+      @include span-columns(1 of 9);
+    }
+
+    &__title {
+      @include span-columns(8 of 9);
+      @include omega;
+    }
+
+    &__description {
+      @include span-columns(9 of 9);
+      @include omega;
+    }
+  }
+
+  .participant-titles {
+    @include span-columns(9 of 9);
+    @include omega;
+  }
+}
+
+@include media($smaller-tablet) {
+  .participant-content {
+    @include span-columns(8 of 8);
+
+    &__photo {
+      @include span-columns(2 of 8);
+    }
+
+    &__title {
+      @include span-columns(6 of 8);
+      @include omega;
+      font-size: $default-font-size - 2;
+    }
+
+    &__description {
+      @include span-columns(8 of 8);
+      @include omega;
+      font-size: $default-font-size - 2;
+    }
+  }
+
+  .participant-titles {
+    @include span-columns(8 of 8);
+    @include omega;
+  }
+}
+
+@include media($smaller-mini-tablet) {
+  .participant-content {
+    @include span-columns(12);
+    @include omega;
+
+    &__photo {
+      @include span-columns(2);
+    }
+
+    &__title {
+      @include span-columns(10);
+      @include omega;
+    }
+
+    &__description {
+      @include span-columns(12);
+      @include omega;
+    }
+  }
+
+  .participant-titles {
+    @include span-columns(12);
+    @include omega;
+  }
+}
+
+@include media($mobile) {
+  .participant-content {
+    &__photo {
+      @include span-columns(3);
+    }
+
+    &__title {
+      @include span-columns(9);
+      @include omega;
+    }
+  }
+}
