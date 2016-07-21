@@ -49,6 +49,10 @@
   &__body {
     padding: 20px;
 
+    @include media($mobile) {
+      padding: 10px;
+    }
+
     img {
       display: block;
       max-width: 50%;
