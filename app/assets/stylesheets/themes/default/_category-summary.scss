@@ -1,0 +1,28 @@
+.category-summary {
+  @include flex-container(horizontal);
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+  @include align-content(space-around);
+
+  li {
+    border: 1px solid rgba($main-color, 0.2);
+    border-radius: $global-radius;
+
+    padding-left: 1rem;
+    margin-top: 1rem;
+
+    @include flex-basis(18rem);
+
+    background: white;
+  }
+
+  ul.sub-category-summary, ul.posts-title {
+    li {
+      list-style-type: circle;
+      border-style: none;
+      margin-left: 2rem;
+      margin-top: auto;
+      max-width: 90%;
+    }
+  }
+}
