@@ -1,7 +1,14 @@
 @import "article-summary-patch";
 
 .category {
-  background: rgba($base-color, 0.2);
+    background: inherit;
+  .category-list__item {
+    display: inline-block;
+    background: rgba($base-color, 0.2);
+    margin-left: 2px;
+    padding: 1px 2px 1px 2px;
+    border-radius: $input-border-radius;
+  }
 }
 
 .article-summary {
