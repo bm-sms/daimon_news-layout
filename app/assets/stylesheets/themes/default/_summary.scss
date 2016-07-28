@@ -31,6 +31,7 @@
 
       &__thumbnail {
         @include span-columns(1 of 9);
+        min-height: 1px;
       }
 
       &__body {
@@ -47,6 +48,7 @@
 
       &__thumbnail {
         @include span-columns(2 of 8);
+        min-height: 1px;
       }
 
       &__body {
