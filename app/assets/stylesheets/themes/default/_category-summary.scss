@@ -1,7 +1,7 @@
 .category-summary {
   @include flex-container(horizontal);
   @include flex-wrap(wrap);
-  @include justify-content(flex-start);
+  @include justify-content(space-between);
 
   li {
     border: 1px solid rgba($main-color, 0.2);
@@ -9,7 +9,6 @@
 
     padding-left: 1rem;
     margin-top: 1rem;
-    margin-right: 1rem;
 
     @include flex-basis(18rem);
 
