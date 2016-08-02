@@ -3,6 +3,8 @@
   @include flex-wrap(wrap);
   @include justify-content(space-between);
 
+  margin-bottom: 20px;
+
   li {
     border: 1px solid rgba($main-color, 0.2);
     border-radius: $global-radius;
