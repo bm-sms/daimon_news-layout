@@ -12,10 +12,10 @@
     padding-left: 1rem;
     padding-right: 1rem;
 
-    @include media($smaller-tablet) {
+    @include media($smaller-mini-tablet) {
       @include flex-basis(100%);
     }
-    @include media($larger-tablet) {
+    @include media($larger-mini-tablet) {
       margin-top: 1rem;
       @include flex-basis(49%);
     }
