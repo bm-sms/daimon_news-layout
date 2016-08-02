@@ -1,7 +1,7 @@
 .category-summary {
   @include flex-container(horizontal);
   @include flex-wrap(wrap);
-  @include justify-content(center);
+  @include justify-content(flex-start);
 
   margin-bottom: 20px;
 
