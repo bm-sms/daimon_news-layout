@@ -1,7 +1,7 @@
 .category-summary {
   @include flex-container(horizontal);
   @include flex-wrap(wrap);
-  @include justify-content(space-between);
+  @include justify-content(center);
 
   margin-bottom: 20px;
 
@@ -17,6 +17,8 @@
     }
     @include media($larger-mini-tablet) {
       margin-top: 1rem;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
       @include flex-basis(49%);
     }
 
