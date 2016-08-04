@@ -5,10 +5,6 @@
 
   margin-bottom: 20px;
 
-  &__title {
-    font-weight: bold;
-  }
-
   &__item {
     border: 1px solid rgba($main-color, 0.2);
     border-radius: $global-radius;
@@ -38,5 +34,16 @@
     margin-top: auto;
     padding-bottom: 0.5rem;
     max-width: 90%;
+  }
+}
+
+a.category-summary__title {
+  color: $base-color;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+
+  &:hover {
+    color: rgba($base-color, 0.7);
   }
 }
