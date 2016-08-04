@@ -12,8 +12,7 @@
   &__item {
     border: 1px solid rgba($main-color, 0.2);
     border-radius: $global-radius;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 10px;
     background: white;
 
     @include media($smaller-mini-tablet) {
@@ -37,6 +36,7 @@
     border-style: none;
     margin-left: 1.5rem;
     margin-top: auto;
+    padding-bottom: 0.5rem;
     max-width: 90%;
   }
 }
