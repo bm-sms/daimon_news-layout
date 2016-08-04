@@ -105,6 +105,9 @@
   }
 
   .related-category {
+    display: inline-block;
+    margin-bottom: 1rem;
+
     .breadcrumbs {
       margin-top: 5px;
     }
@@ -114,6 +117,7 @@
     }
 
     &__item {
+      display: block;
       list-style-type: none;
     }
   }
