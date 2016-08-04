@@ -115,11 +115,7 @@
   position: relative;
 
   &__title {
-    border-bottom: 3px solid rgba($base-color, 0.15);
-    color: $base-color;
-    font-size: $default-font-size + 4;
-    font-weight: bold;
-    margin: 30px 0;
+    @include sub-header;
   }
 
   &__list {
