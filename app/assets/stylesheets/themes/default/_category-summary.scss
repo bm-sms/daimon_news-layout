@@ -5,7 +5,11 @@
 
   margin-bottom: 20px;
 
-  li {
+  &__title {
+    font-weight: bold;
+  }
+
+  &__item {
     border: 1px solid rgba($main-color, 0.2);
     border-radius: $global-radius;
 
@@ -25,17 +29,12 @@
     background: white;
   }
 
-  ul.sub-category-summary, ul.posts-title {
-    li {
-      list-style-type: circle;
-      border-style: none;
-      margin-left: 2rem;
-      margin-top: auto;
-      max-width: 90%;
-    }
+  .sub-category-summary .category-summary__item,
+  .posts-title__item {
+    list-style-type: circle;
+    border-style: none;
+    margin-left: 2rem;
+    margin-top: auto;
+    max-width: 90%;
   }
-}
-
-.category-summary > li > a {
-  font-weight: bold;
 }
