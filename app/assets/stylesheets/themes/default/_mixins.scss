@@ -232,3 +232,18 @@
   font-weight: bold;
   margin: 30px 0;
 }
+
+@mixin prepend-list-item-mark {
+  &:before {
+    content: ' ';
+    border: transparent solid 0.3em;
+    border-left-color: $base-color;
+    position: absolute;
+    height: 0;
+    width: 0;
+    left: 0.5em;
+    margin: 0px;
+    margin-top: 0.4em;
+    padding: 0px;
+  }
+}

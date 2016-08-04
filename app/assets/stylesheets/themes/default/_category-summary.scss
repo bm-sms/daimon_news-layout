@@ -12,9 +12,9 @@
   &__item {
     border: 1px solid rgba($main-color, 0.2);
     border-radius: $global-radius;
-
     padding-left: 1rem;
     padding-right: 1rem;
+    background: white;
 
     @include media($smaller-mini-tablet) {
       @include flex-basis(100%);
@@ -25,15 +25,17 @@
       margin-right: 0.5%;
       @include flex-basis(49%);
     }
-
-    background: white;
   }
 
-  .sub-category-summary .category-summary__item,
-  .posts-title__item {
-    list-style-type: circle;
+  &__list {
+    position: relative;
+  }
+
+  &__list-item {
+    @include prepend-list-item-mark;
+
     border-style: none;
-    margin-left: 2rem;
+    margin-left: 1.5rem;
     margin-top: auto;
     max-width: 90%;
   }
