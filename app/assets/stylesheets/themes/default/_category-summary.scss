@@ -1,0 +1,62 @@
+.category-summary-list {
+  @include flex-container(horizontal);
+  @include flex-wrap(wrap);
+  @include justify-content(flex-start);
+
+  margin-bottom: 20px;
+
+  &__item {
+    @include media($smaller-mini-tablet) {
+      @include flex-basis(100%);
+    }
+    @include media($larger-mini-tablet) {
+      margin-top: 1rem;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+      @include flex-basis(49%);
+    }
+  }
+}
+
+.category-summary {
+  position: relative;
+  border: 1px solid rgba($main-color, 0.2);
+  border-radius: $global-radius;
+  background: white;
+  padding: 10px 10px 10 + $default-font-size;
+
+  &__content-titles {
+    position: relative;
+  }
+
+  &__content-title {
+    @include prepend-list-item-mark;
+
+    border-style: none;
+    margin-left: 1.5rem;
+    margin-top: auto;
+    padding-bottom: 0.5rem;
+    max-width: 90%;
+    word-break: break-word;
+  }
+
+  &__more-link {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  // XXX We can't use &__title
+  // because `a:link, a:visited, a:active` on _base.scss has higher priority level
+  .category-summary__title {
+    color: $base-color;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+
+    &:hover {
+      color: rgba($base-color, 0.7);
+    }
+  }
+}
+

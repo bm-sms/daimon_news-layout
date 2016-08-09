@@ -10,3 +10,7 @@
 .category-description {
   margin-bottom: 20px;
 }
+
+.category-titles__title {
+  @include sub-header;
+}
