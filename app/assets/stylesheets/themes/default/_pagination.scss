@@ -20,7 +20,7 @@
     font-size: $default-font-size - 2;
 
     @include media($iphone5less) {
-      font-size: 12px;
+      font-size: 11px;
       margin: 0;
     }
 
