@@ -19,6 +19,11 @@
     display: inline-block;
     font-size: $default-font-size - 2;
 
+    @include media($iphone5less) {
+      font-size: 12px;
+      margin: 0;
+    }
+
     @include media($mobile) {
       margin: 0;
     }
