@@ -260,6 +260,16 @@ _::-webkit-full-page-media, _:future, :root .article-summary__data-item { // for
       padding: 10px 0 0 0;
     }
 
+    &__rank {
+      position: absolute;
+      margin: 0.1rem;
+      padding: 0 0.3rem;
+      border-radius: 50%;
+      background-color: $base-color;
+      color: white;
+      font-size: 0.7rem;
+    }
+
     &__data {
       padding: 10px 0 0;
     }
